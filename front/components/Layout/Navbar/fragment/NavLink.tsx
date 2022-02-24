@@ -17,7 +17,7 @@ const wrapper = css`
     position: absolute;
     left: -5%;
     bottom: 0.2rem;
-    border-bottom: 3px solid rgba(186, 42, 43, 0.8);
+    border-bottom: 3.5px solid rgba(186, 42, 43, 0.8);
 
     transform: scaleX(0);
     transition: transform 300ms ease-in-out;
