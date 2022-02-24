@@ -18,14 +18,14 @@ const wrapper = css`
   width: 100vw;
 
   .logo {
-    margin: 1.5rem 0 1.2rem 2rem;
+    margin: 1.5rem 0 1.2rem 4rem;
   }
 
   .rightItems {
     width: 20vw;
     display: flex;
     justify-content: space-between;
-    margin: 1.5rem 8rem auto;
+    margin: 1.4rem 8rem auto;
   }
 `;
 
