@@ -1,5 +1,13 @@
+import Banner from './Banner/Index';
+import Content from './Content';
+
 function Main() {
-  return <div>Main</div>;
+  return (
+    <>
+      <Banner />
+      <Content />
+    </>
+  );
 }
 
 export default Main;
