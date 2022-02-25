@@ -3,6 +3,7 @@ import { css } from '@emotion/react';
 import Logo from './fragment/Logo';
 import NavLink from './fragment/NavLink';
 import SignIn from './fragment/SignIn';
+import Search from './fragment/Search';
 
 const wrapper = css`
   position: sticky;
@@ -20,13 +21,13 @@ const wrapper = css`
   .logo {
     margin: 1.5rem 0 1.2rem 4rem;
   }
+`;
 
-  .rightItems {
-    width: 20vw;
-    display: flex;
-    justify-content: space-between;
-    margin: 1.4rem 8rem auto;
-  }
+const rightItemsCss = css`
+  width: 33rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 1.4rem 6rem auto;
 `;
 
 function Navbar() {
@@ -35,7 +36,8 @@ function Navbar() {
       <div className="logo">
         <Logo />
       </div>
-      <div className="rightItems">
+      <div css={rightItemsCss}>
+        <Search />
         <NavLink text="Explore" />
         <NavLink text="Community" />
         <SignIn />
