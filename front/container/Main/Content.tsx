@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import { Typography } from '@mui/material';
+import React from 'react';
 
 const wrapper = css`
   margin: 12rem 0 28rem 10rem;

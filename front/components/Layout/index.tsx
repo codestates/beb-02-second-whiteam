@@ -2,11 +2,11 @@ import { css } from '@emotion/react';
 import { ThemeProvider } from '@mui/material/styles';
 
 import Navbar from './Navbar/index';
-import Footer from './Footer/index';
+import Footer from './Footer';
 import lightTheme from '../../styles/theme/lightTheme';
 
 interface LayoutProps {
-  children: React.ReactChild;
+  children?: React.ReactNode;
 }
 
 const wrapper = css`

@@ -1,4 +1,4 @@
-import Banner from './Banner/Index';
+import Banner from './Banner/index';
 import Content from './Content';
 
 function Main() {
