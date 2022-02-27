@@ -7,16 +7,14 @@ import {
   ListItemText,
   ListItemButton,
   IconButton,
-  Switch,
 } from '@mui/material';
 
 import FilterAltSharpIcon from '@mui/icons-material/FilterAltSharp';
-import AttachMoneySharpIcon from '@mui/icons-material/AttachMoneySharp';
-import ShoppingBasketSharpIcon from '@mui/icons-material/ShoppingBasketSharp';
 import ArrowBackIosNewSharpIcon from '@mui/icons-material/ArrowBackIosNewSharp';
 
-import Collections from './fragment/Collections';
+import BuyNow from './fragment/BuyNow';
 import Price from './fragment/Price';
+import Collections from './fragment/Collections';
 
 interface menuProps {
   open: boolean;
@@ -24,12 +22,6 @@ interface menuProps {
 }
 
 function Menu({ open, toggleSidebar }: menuProps) {
-  const [buyNow, setBuyNow] = useState(false);
-
-  const toggleBuyNow = () => {
-    setBuyNow(!buyNow);
-  };
-
   return (
     <>
       <List>
@@ -57,21 +49,7 @@ function Menu({ open, toggleSidebar }: menuProps) {
           </ListItemButton>
         </ListItem>
 
-        <ListItem disablePadding>
-          <ListItemButton onClick={open ? toggleBuyNow : toggleSidebar(true)}>
-            <ListItemIcon>
-              <ShoppingBasketSharpIcon />
-            </ListItemIcon>
-            <ListItemText primary={'Buy Now'} />
-            <Switch
-              size="small"
-              edge="end"
-              color="error"
-              onChange={toggleBuyNow}
-              checked={buyNow}
-            />
-          </ListItemButton>
-        </ListItem>
+        <BuyNow open={open} toggleSidebar={toggleSidebar} />
 
         <Price open={open} toggleSidebar={toggleSidebar} />
 

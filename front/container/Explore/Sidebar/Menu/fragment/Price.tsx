@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useAtom } from 'jotai';
 import Image from 'next/image';
 
@@ -9,10 +9,8 @@ import {
   ListItemText,
   ListItemButton,
   Collapse,
-  Input,
   TextField,
   IconButton,
-  FormHelperText,
 } from '@mui/material';
 
 import { ExpandLess, ExpandMore, AttachMoneySharp } from '@mui/icons-material';
@@ -26,31 +24,20 @@ interface menuProps {
 
 function Price({ open, toggleSidebar }: menuProps) {
   const [expanded, setExpanded] = useState(false);
-  const [isNumFrom, setIsNumFrom] = useState<boolean | null>(null);
-  const [isNumTo, setIsNumTo] = useState<boolean | null>(null);
-
   const [priceFrom, setPriceFrom] = useState('');
   const [priceTo, setPriceTo] = useState('');
 
-  const [getPriceRangeFrom, setPriceRangeFrom] = useAtom(priceRangeFrom);
-  const [getPriceRangeTo, setPriceRangeTo] = useAtom(priceRangeTo);
+  const [, setPriceRangeFrom] = useAtom(priceRangeFrom);
+  const [, setPriceRangeTo] = useAtom(priceRangeTo);
 
   const handleFromChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (
-      e.target.value === '0' ||
-      e.target.value === '' ||
-      Number(e.target.value)
-    )
-      setPriceFrom(e.target.value);
+    const pattern = /^\d*[.]?\d*$/;
+    if (pattern.test(e.target.value)) setPriceFrom(e.target.value);
   };
 
   const handleToChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (
-      e.target.value === '0' ||
-      e.target.value === '' ||
-      Number(e.target.value)
-    )
-      setPriceTo(e.target.value);
+    const pattern = /^\d*[.]?\d*$/;
+    if (pattern.test(e.target.value)) setPriceTo(e.target.value);
   };
 
   const handleClick = () => {
@@ -95,7 +82,11 @@ function Price({ open, toggleSidebar }: menuProps) {
               value={priceTo}
               onChange={handleToChange}
             />
-            <IconButton aria-label="price search" sx={{ marginTop: '0.5rem' }}>
+            <IconButton
+              aria-label="price search"
+              sx={{ marginTop: '0.5rem' }}
+              onClick={handleClick}
+            >
               <Image src="/icons/ethereum.svg" width="24" height="24" />
             </IconButton>
           </ListItem>

@@ -1,7 +1,7 @@
 import { atom } from 'jotai';
 
-const priceRangeFromAtom = atom<number | string>('');
-const priceRangeToAtom = atom<number | string>('');
+const priceRangeFromAtom = atom<number | ''>('');
+const priceRangeToAtom = atom<number | ''>('');
 
 export const priceRangeFrom = atom(
   (get) => get(priceRangeFromAtom),
