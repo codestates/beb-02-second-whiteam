@@ -62,7 +62,11 @@ function Price({ open, toggleSidebar }: menuProps) {
       </ListItem>
 
       <Collapse in={open && expanded} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding sx={{ margin: '0 0 1rem 1.5rem' }}>
+        <List
+          component="div"
+          disablePadding
+          sx={{ margin: '-0.5rem 0 0.5rem 2.5rem' }}
+        >
           <ListItem>
             <TextField
               id="from-input"
@@ -84,7 +88,7 @@ function Price({ open, toggleSidebar }: menuProps) {
             />
             <IconButton
               aria-label="price search"
-              sx={{ marginTop: '0.5rem' }}
+              sx={{ margin: '0.5rem 0 0 0.5rem' }}
               onClick={handleClick}
             >
               <Image src="/icons/ethereum.svg" width="24" height="24" />

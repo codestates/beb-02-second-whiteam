@@ -4,7 +4,7 @@ import { Drawer as MuiDrawer } from '@mui/material';
 
 import Menu from './Menu';
 
-const drawerWidth = 270;
+const drawerWidth = '20rem';
 
 const openedMixin = (theme: Theme): CSSObject => ({
   width: drawerWidth,
