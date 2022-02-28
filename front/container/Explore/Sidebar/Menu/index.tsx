@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import {
   List,
   ListItem,
@@ -9,8 +7,7 @@ import {
   IconButton,
 } from '@mui/material';
 
-import FilterAltSharpIcon from '@mui/icons-material/FilterAltSharp';
-import ArrowBackIosNewSharpIcon from '@mui/icons-material/ArrowBackIosNewSharp';
+import { FilterAltSharp, ArrowBackIosNewSharp } from '@mui/icons-material';
 
 import BuyNow from './fragment/BuyNow';
 import Price from './fragment/Price';
@@ -30,7 +27,7 @@ function Menu({ open, toggleSidebar }: menuProps) {
           secondaryAction={
             open && (
               <IconButton onClick={toggleSidebar(false)}>
-                <ArrowBackIosNewSharpIcon
+                <ArrowBackIosNewSharp
                   sx={{
                     color: 'black',
                     fontSize: 'medium',
@@ -43,7 +40,7 @@ function Menu({ open, toggleSidebar }: menuProps) {
         >
           <ListItemButton onClick={toggleSidebar(true)}>
             <ListItemIcon>
-              <FilterAltSharpIcon color="error" />
+              <FilterAltSharp color="error" />
             </ListItemIcon>
             <ListItemText primary="Filter" />
           </ListItemButton>

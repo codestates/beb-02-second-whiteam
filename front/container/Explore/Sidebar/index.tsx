@@ -1,9 +1,6 @@
 import { useState } from 'react';
-import { useAtom } from 'jotai';
-import { styled, useTheme, Theme, CSSObject } from '@mui/material/styles';
-import { Drawer as MuiDrawer, Button, IconButton } from '@mui/material';
-
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { styled, Theme, CSSObject } from '@mui/material/styles';
+import { Drawer as MuiDrawer } from '@mui/material';
 
 import Menu from './Menu';
 
@@ -16,7 +13,6 @@ const openedMixin = (theme: Theme): CSSObject => ({
     duration: theme.transitions.duration.enteringScreen,
   }),
   overflow: 'hidden',
-  // maxHeight: 'calc(100% - 8.5rem - 1px)',
   marginTop: 'calc(4.5rem + 1px)',
 });
 
@@ -26,7 +22,6 @@ const closedMixin = (theme: Theme): CSSObject => ({
     duration: theme.transitions.duration.leavingScreen,
   }),
   overflow: 'hidden',
-  // maxHeight: 'calc(100% - 8.5rem - 1px)',
   marginTop: 'calc(4.5rem + 1px)',
   width: `calc(${theme.spacing(6)} + 1px)`,
   [theme.breakpoints.up('sm')]: {
@@ -55,7 +50,6 @@ function Sidebar() {
 
   const toggleSidebar = (open: boolean) => () => {
     setOpen(open);
-    console.log();
   };
 
   return (
