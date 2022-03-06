@@ -14,8 +14,11 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
+    "ipfs-api": "^26.1.2",
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.15",
-    "sequelize": "^6.16.2"
+    "sequelize": "^6.16.2",
+    "sequelize-cli": "^6.4.1",
+    "web3": "^1.7.0"
   }
 }
