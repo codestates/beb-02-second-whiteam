@@ -26,17 +26,17 @@ db.Comment = Comment;
 db.Collection = Collection;
 db.Nft = Nft;
 
-// User.init(sequelize);
-// Post.init(sequelize);
-// Comment.init(sequelize);
-// Collection.init(sequelize);
-// Nft.init(sequelize);
+User.init(sequelize);
+Post.init(sequelize);
+Comment.init(sequelize);
+Collection.init(sequelize);
+Nft.init(sequelize);
 
-// User.associate(db);
-// Post.associate(db);
-// Comment.associate(db);
-// Collection.associate(db);
-// Nft.associate(db);
+User.associate(db);
+Post.associate(db);
+Comment.associate(db);
+Collection.associate(db);
+Nft.associate(db);
 
 //User.sync({
 //  force: process.env.TABLE_CREATE_ALWAYS === "true", // true : (drop) table 데이터 없어질 수 있음

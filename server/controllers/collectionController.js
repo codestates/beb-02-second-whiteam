@@ -64,7 +64,7 @@ module.exports = {
           new Date(),
           new Date(),
         ];
-        const [records, _] = await sequelize.query(sql, { replacements });
+        await sequelize.query(sql, { replacements });
 
         res.status(201).send('Created');
       } catch (err) {

@@ -51,7 +51,8 @@ module.exports = {
         );
 
         const contract = new web3.eth.Contract(whiteNFTABI, contract_addr);
-        const token_id = (await contract.methods.currentTokenIds().call()) + 1;
+        const token_id =
+          Number(await contract.methods.currentTokenIds().call()) + 1;
         const rawTx = {
           to: contract_addr,
           gas: await contract.methods
@@ -82,7 +83,6 @@ module.exports = {
 
         res.status(201).send('Created');
       } catch (err) {
-        console.log(err);
         res.status(500).send('Internal Server Error');
       }
     },
@@ -129,9 +129,8 @@ module.exports = {
         replacements = [to, nft_id];
         await sequelize.query(sql, { replacements });
 
-        res.status(201).send('Created');
+        res.status(200).send('OK');
       } catch (err) {
-        console.log(err);
         res.status(500).send('Internal Server Error');
       }
     },
