@@ -1,21 +1,21 @@
 //'use strict';
-const Sequelize = require("sequelize");
+const Sequelize = require('sequelize');
 
-const User = require("./user");
-const Post = require("./post");
-const Comment = require("./comment");
-const Collection = require("./collection");
-const Nft = require("./nft");
+const User = require('./user');
+const Post = require('./post');
+const Comment = require('./comment');
+const Collection = require('./collection');
+const Nft = require('./nft');
 
-const env = process.env.NODE_ENV || "development";
-const config = require(__dirname + "/../config/config.js")[env];
+const env = process.env.NODE_ENV || 'development';
+const config = require(__dirname + '/../config/config.js')[env];
 
 const db = {};
 const sequelize = new Sequelize(
   config.database,
   config.username,
   config.password,
-  config
+  config,
 );
 
 db.sequelize = sequelize;
@@ -26,17 +26,17 @@ db.Comment = Comment;
 db.Collection = Collection;
 db.Nft = Nft;
 
-User.init(sequelize);
-Post.init(sequelize);
-Comment.init(sequelize);
-Collection.init(sequelize);
-Nft.init(sequelize);
+// User.init(sequelize);
+// Post.init(sequelize);
+// Comment.init(sequelize);
+// Collection.init(sequelize);
+// Nft.init(sequelize);
 
-User.associate(db);
-Post.associate(db);
-Comment.associate(db);
-Collection.associate(db);
-Nft.associate(db);
+// User.associate(db);
+// Post.associate(db);
+// Comment.associate(db);
+// Collection.associate(db);
+// Nft.associate(db);
 
 //User.sync({
 //  force: process.env.TABLE_CREATE_ALWAYS === "true", // true : (drop) table 데이터 없어질 수 있음

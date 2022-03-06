@@ -1,22 +1,22 @@
-const cors = require("cors");
-const express = require("express");
-const bodyParser = require("body-parser");
+const cors = require('cors');
+const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
-const indexRouter = require("./routes");
-const cotrollers = require("./controllers");
+const indexRouter = require('./routes');
+const cotrollers = require('./controllers');
 const port = 4000;
-const { sequelize } = require("./models/index");
+const { sequelize } = require('./models/index');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: 'http://localhost:3000',
     credentials: true,
-    methods: ["GET", "POST", "OPTIONS"],
-  })
+    methods: ['GET', 'POST', 'OPTIONS'],
+  }),
 );
-app.use("/", indexRouter);
+app.use('/', indexRouter);
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 sequelize
   .sync({ force: true })
   .then(() => {
-    console.log("connect success!");
+    console.log('connect success!');
   })
   .catch((err) => {
     console.log(err);
