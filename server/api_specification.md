@@ -6,7 +6,7 @@ Read user information by user name
 
 ```json
 {
-  "user_name": "가나다"
+  "user_email": "가나다@naver.com"
 }
 ```
 
@@ -34,6 +34,38 @@ Create new user
 }
 ```
 
+### /collection (GET)
+
+Read all collection
+
+- **Response**
+
+```json
+[
+  {
+    "id": 1,
+    "collection_name": "가나다",
+    "collection_symbol": "가나다",
+    "contract_addr": "0x123...",
+    "creator": "0x123...",
+    "created_at": "2022-01-01T00:00:00.000Z",
+    "updated_at": "2022-01-01T00:00:00.000Z",
+    "deleted_at": "2022-01-01T00:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "collection_name": "가나다",
+    "collection_symbol": "가나다",
+    "contract_addr": "0x123...",
+    "creator": "0x123...",
+    "created_at": "2022-01-01T00:00:00.000Z",
+    "updated_at": "2022-01-01T00:00:00.000Z",
+    "deleted_at": "2022-01-01T00:00:00.000Z"
+  },
+	...
+]
+```
+
 ### /collection (POST)
 
 Create new collection
@@ -46,6 +78,42 @@ Create new collection
   "collection_symbol": "가나다",
   "creator": "0x123..."
 }
+```
+
+### /nft (GET)
+
+Read all NFT
+
+- **Response**
+
+```json
+[
+	{
+		"id": 1,
+		"collection_id": 1,
+		"owner": "0x123...",
+		"token_id": 1,
+		"nft_name": "가나다",
+		"nft_description": "가나다",
+		"image_uri": "https://ipfs.io/ipfs/abcdefg...",
+		"created_at": "2022-01-01T00:00:00.000Z",
+		"updated_at": "2022-01-01T00:00:00.000Z",
+		"deleted_at": "2022-01-01T00:00:00.000Z"
+	},
+	{
+		"id": 2,
+		"collection_id": 1,
+		"owner": "0x123...",
+		"token_id": 2,
+		"nft_name": "가나다",
+		"nft_description": "가나다",
+		"image_uri": "https://ipfs.io/ipfs/abcdefg...",
+		"created_at": "2022-01-01T00:00:00.000Z",
+		"updated_at": "2022-01-01T00:00:00.000Z",
+		"deleted_at": "2022-01-01T00:00:00.000Z"
+	},
+	...
+]
 ```
 
 ### /nft (POST)
