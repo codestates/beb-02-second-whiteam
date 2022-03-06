@@ -89,7 +89,6 @@ module.exports = {
 
         res.status(201).send('Created');
       } catch (err) {
-        console.error(err);
         res.status(500).send('Internal Server Error');
       }
     },
@@ -138,7 +137,6 @@ module.exports = {
 
         res.status(200).send('OK');
       } catch (err) {
-        console.error(err);
         res.status(500).send('Internal Server Error');
       }
     },
