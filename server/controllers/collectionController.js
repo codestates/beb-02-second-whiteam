@@ -46,7 +46,9 @@ module.exports = {
         );
         const rawTx = {
           to: whiteFactoryAddress,
-          gas: await contract.methods.deploy(bytecode, salt).estimateGas(),
+          gas: await contract.methods.deploy(bytecode, salt).estimateGas({
+            from: serverAccount.address,
+          }),
           data: contract.methods.deploy(bytecode, salt).encodeABI(),
         };
         const signedTransaction = await serverAccount.signTransaction(rawTx);
@@ -64,7 +66,7 @@ module.exports = {
           new Date(),
           new Date(),
         ];
-        const [records, _] = await sequelize.query(sql, { replacements });
+        await sequelize.query(sql, { replacements });
 
         res.status(201).send('Created');
       } catch (err) {

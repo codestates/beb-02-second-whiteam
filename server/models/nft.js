@@ -13,7 +13,7 @@ module.exports = class Nft extends Sequelize.Model {
           allowNull: false,
         },
         token_id: {
-          type: Sequelize.STRING(30),
+          type: Sequelize.INTEGER,
           allowNull: false,
         },
         nft_name: {

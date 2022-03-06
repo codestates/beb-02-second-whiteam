@@ -8,9 +8,9 @@ module.exports = {
         const sql = `
 					SELECT user_name, user_email, user_addr, token_quantity
 					FROM user
-					WHERE user_name = ?
+					WHERE user_email = ?
 				`;
-        const replacements = [req.body.user_name];
+        const replacements = [req.body.user_email];
         const [records, _] = await sequelize.query(sql, { replacements });
         if (records.length === 0) {
           return res.status(403).send('Forbidden');
