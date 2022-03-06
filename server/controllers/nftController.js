@@ -52,12 +52,18 @@ module.exports = {
 
         const contract = new web3.eth.Contract(whiteNFTABI, contract_addr);
         const token_id =
-          Number(await contract.methods.currentTokenIds().call()) + 1;
+          Number(
+            await contract.methods.currentTokenIds().call({
+              from: serverAccount.address,
+            }),
+          ) + 1;
         const rawTx = {
           to: contract_addr,
           gas: await contract.methods
             .mintNFT(owner, metadataIpfs[0].path)
-            .estimateGas(),
+            .estimateGas({
+              from: serverAccount.address,
+            }),
           data: contract.methods
             .mintNFT(owner, metadataIpfs[0].path)
             .encodeABI(),
@@ -83,6 +89,7 @@ module.exports = {
 
         res.status(201).send('Created');
       } catch (err) {
+        console.error(err);
         res.status(500).send('Internal Server Error');
       }
     },
@@ -131,6 +138,7 @@ module.exports = {
 
         res.status(200).send('OK');
       } catch (err) {
+        console.error(err);
         res.status(500).send('Internal Server Error');
       }
     },

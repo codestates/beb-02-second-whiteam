@@ -46,7 +46,9 @@ module.exports = {
         );
         const rawTx = {
           to: whiteFactoryAddress,
-          gas: await contract.methods.deploy(bytecode, salt).estimateGas(),
+          gas: await contract.methods.deploy(bytecode, salt).estimateGas({
+            from: serverAccount.address,
+          }),
           data: contract.methods.deploy(bytecode, salt).encodeABI(),
         };
         const signedTransaction = await serverAccount.signTransaction(rawTx);
@@ -68,6 +70,7 @@ module.exports = {
 
         res.status(201).send('Created');
       } catch (err) {
+        console.error(err);
         res.status(500).send('Internal Server Error');
       }
     },
