@@ -61,8 +61,7 @@ Read all collection
     "created_at": "2022-01-01T00:00:00.000Z",
     "updated_at": "2022-01-01T00:00:00.000Z",
     "deleted_at": "2022-01-01T00:00:00.000Z"
-  },
-	...
+  }
 ]
 ```
 
@@ -88,31 +87,30 @@ Read all NFT
 
 ```json
 [
-	{
-		"id": 1,
-		"collection_id": 1,
-		"owner": "0x123...",
-		"token_id": 1,
-		"nft_name": "가나다",
-		"nft_description": "가나다",
-		"image_uri": "https://ipfs.io/ipfs/abcdefg...",
-		"created_at": "2022-01-01T00:00:00.000Z",
-		"updated_at": "2022-01-01T00:00:00.000Z",
-		"deleted_at": "2022-01-01T00:00:00.000Z"
-	},
-	{
-		"id": 2,
-		"collection_id": 1,
-		"owner": "0x123...",
-		"token_id": 2,
-		"nft_name": "가나다",
-		"nft_description": "가나다",
-		"image_uri": "https://ipfs.io/ipfs/abcdefg...",
-		"created_at": "2022-01-01T00:00:00.000Z",
-		"updated_at": "2022-01-01T00:00:00.000Z",
-		"deleted_at": "2022-01-01T00:00:00.000Z"
-	},
-	...
+  {
+    "id": 1,
+    "collection_id": 1,
+    "owner": "0x123...",
+    "token_id": 1,
+    "nft_name": "가나다",
+    "nft_description": "가나다",
+    "image_uri": "https://ipfs.io/ipfs/abcdefg...",
+    "created_at": "2022-01-01T00:00:00.000Z",
+    "updated_at": "2022-01-01T00:00:00.000Z",
+    "deleted_at": "2022-01-01T00:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "collection_id": 1,
+    "owner": "0x123...",
+    "token_id": 2,
+    "nft_name": "가나다",
+    "nft_description": "가나다",
+    "image_uri": "https://ipfs.io/ipfs/abcdefg...",
+    "created_at": "2022-01-01T00:00:00.000Z",
+    "updated_at": "2022-01-01T00:00:00.000Z",
+    "deleted_at": "2022-01-01T00:00:00.000Z"
+  }
 ]
 ```
 
